@@ -1,0 +1,51 @@
+# Environment variables
+.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Temporary files
+temp/
+*.tmp
+*.temp
+
+# Log files
+logs/
+*.log
+
+# Image files (except samples)
+images/*.gif
+images/*.jpg
+images/*.png
+!images/sample*
+
+# Data files
+*.json
+!radar_data_sample.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Coverage
+.coverage
+htmlcov/
