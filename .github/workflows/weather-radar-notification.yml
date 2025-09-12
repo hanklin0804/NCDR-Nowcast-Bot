@@ -3,7 +3,8 @@ name: Weather Radar LINE Notification
 on:
   schedule:
     - cron: '0 0 * * *'  # 每天 08:00（台北=UTC+8）
-    - cron: '0 5 * * *'  # 每天 13:00（台北=UTC+8）
+    - cron: '30 3 * * *'  # 每天 11:30（台北=UTC+8）
+    - cron: '0 6 * * *'  # 每天 14:00（台北=UTC+8）
 
   
   # 手動觸發
