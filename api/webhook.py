@@ -7,6 +7,8 @@ import hmac
 import base64
 from datetime import datetime
 
+# Test: Check Vercel GitHub auto-deploy connection
+
 # 引用現有模組
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from src.image_processor import process_radar_images
