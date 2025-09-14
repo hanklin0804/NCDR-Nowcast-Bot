@@ -3,13 +3,5 @@
     "api/webhook.py": {
       "maxDuration": 30
     }
-  },
-  "build": {
-    "env": {
-      "PYTHONPATH": "$PYTHONPATH:/var/task"
-    }
-  },
-  "install": {
-    "command": "pip install -r requirements-vercel.txt"
   }
 }
