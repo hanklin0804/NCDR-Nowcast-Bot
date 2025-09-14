@@ -242,7 +242,10 @@ class handler(BaseHTTPRequestHandler):
         """發送雷達圖片"""
         import requests
 
-        timestamp = datetime.now().strftime("%Y/%m/%d %H:%M")
+        # 使用台北時間
+        from datetime import timezone, timedelta
+        taipei_tz = timezone(timedelta(hours=8))
+        timestamp = datetime.now(taipei_tz).strftime("%Y/%m/%d %H:%M")
 
         payload = {
             'replyToken': reply_token,
