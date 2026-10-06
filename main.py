@@ -22,6 +22,11 @@ SITE_DIR = "site"
 TAIPEI = ZoneInfo("Asia/Taipei")
 
 
+def line_credentials():
+    """GitHub Secrets 貼上時常帶到換行，放進 HTTP header 會被拒"""
+    return os.environ["LINE_CHANNEL_ACCESS_TOKEN"].strip(), os.environ["LINE_USER_ID"].strip()
+
+
 def build():
     paths = fetch_frame_paths()
     preview_index, stamp = latest_observation(paths)
@@ -44,7 +49,7 @@ def build():
 def push(base_url, name):
     base_url = base_url.rstrip("/")
     timestamp = datetime.now(TAIPEI).strftime("%Y/%m/%d %H:%M")
-    push_messages(os.environ["LINE_CHANNEL_ACCESS_TOKEN"], os.environ["LINE_USER_ID"], [
+    push_messages(*line_credentials(), [
         {"type": "text", "text": f"🌧️ 雷達回波動畫 ({timestamp})"},
         {
             "type": "video",
@@ -60,7 +65,7 @@ def notify_failure():
     run_url = os.getenv("RUN_URL")
     if run_url:
         text += f"\n{run_url}"
-    push_messages(os.environ["LINE_CHANNEL_ACCESS_TOKEN"], os.environ["LINE_USER_ID"], [
+    push_messages(*line_credentials(), [
         {"type": "text", "text": text},
     ])
 
